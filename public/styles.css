@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  background-color: coral;
+}
+
+.image {
+  height: 10rem;
+  width: 10rem;
+}
+
+.photo-section {
+  display: flex;
+  flex-wrap: wrap;
+}
+.photo-box {
+  margin: 1rem;
+}

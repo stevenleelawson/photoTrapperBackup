@@ -52,6 +52,22 @@ app.post('/api/v1/photos', (request, response) => {
     })
 });
 
+app.delete('/api/v1/photos/:id', (request, response) => {
+  database('photos').where('id', request.params.id).del()
+    .then( id => {
+      if (id) {
+        response.status(204).json({ id })
+      } else {
+        response.status(404).json({
+          error: `Could not find photo with id ${request.params.id}`
+        })
+      }
+    })
+    .catch( error => {
+      response.status(500).json({error})
+    })
+});
+
 app.listen(app.get('port'), () => {
   console.log(`${app.locals.title} is running on port ${app.get('port')}`)
 })

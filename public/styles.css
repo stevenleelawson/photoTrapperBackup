@@ -1,0 +1,57 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  background-color: coral;
+}
+
+.image {
+  height: 10rem;
+  width: 10rem;
+}
+
+.photo-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.photo-box {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+
+.form-section {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-title {
+  margin-left: 53rem;
+  font-size: 3rem;
+}
+
+input,
+button {
+  width: 20vw;
+  margin: .5rem;
+}
+
+button {
+  border-radius: none;
+  background-color: black;
+  color: white;
+}
+
+.delete-photo {
+  width: 10rem;
+  margin: 0;
+}

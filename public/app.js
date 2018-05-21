@@ -1,4 +1,3 @@
-$('h1').text('taco')
 
 const getPhotos = async () => {
   try {
@@ -18,10 +17,32 @@ const renderPhotos = (photos) => {
       `<section class='photo-box'>
         <h1>${photo.title}</h1>
         <img class="image" src=${photo.photo_url} />
+        <button class='delete-photo'>Kill Photo</button>
       </section>`
     )
   })
 }
+
+const postPhotos = async () => {
+  const inputs = document.querySelectorAll('input');
+  const body = {
+    title: inputs[0].value,
+    photo_url: inputs[1].value
+  }
+  console.log('enpats', body)
+  const response = await fetch('/api/v1/photos', {
+    method: 'POST',
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(body)
+  });
+
+}
+
+$('button').on('click', postPhotos)
+
+
 
 $( document ).ready(function() {
     getPhotos()

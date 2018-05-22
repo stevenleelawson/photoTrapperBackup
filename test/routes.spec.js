@@ -68,13 +68,14 @@ describe('API-ROUTES', () => {
   describe('DELETE /api/v1/photos/:id', () => {
     it('should delete a record with a spec id', () => {
       return chai.request(server)
-        .delete(`/api/v1/photos/1`)
+        .delete('/api/v1/photos/1')
         .then(response => {
-          response.should.have.status(404);
+          response.should.have.status(204);
         })
         .catch(error => {
           throw error;
         })
     })
+
   })
 })

@@ -55,9 +55,10 @@ app.post('/api/v1/photos', (request, response) => {
 app.delete('/api/v1/photos/:id', (request, response) => {
   database('photos').where('id', request.params.id).del()
     .then( id => {
-      if (id) {
+      if (id !== null) {
         response.status(204).json({ id })
       } else {
+        console.log('delete',id)
         response.status(404).json({
           error: `Could not find photo with id ${request.params.id}`
         })

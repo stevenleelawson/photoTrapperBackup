@@ -30,7 +30,6 @@ app.get('/api/v1/photos', (request, response) => {
 })
 
 app.post('/api/v1/photos', (request, response) => {
-  console.log('request', request.body)
   const photos = request.body;
 
   for (let requiredParameter of ['title', 'photo_url']) {
@@ -58,7 +57,6 @@ app.delete('/api/v1/photos/:id', (request, response) => {
       if (id !== null) {
         response.status(204).json({ id })
       } else {
-        console.log('delete',id)
         response.status(404).json({
           error: `Could not find photo with id ${request.params.id}`
         })

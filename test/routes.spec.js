@@ -71,6 +71,8 @@ describe('API-ROUTES', () => {
         .delete('/api/v1/photos/1')
         .then(response => {
           response.should.have.status(204);
+          response.body.should.be.a('object');
+          response.text.should.equal('')
         })
         .catch(error => {
           throw error;
